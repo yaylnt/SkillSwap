@@ -1,37 +1,101 @@
-# SkillSwap — платформа обмена навыками
+# 🎓 SkillSwap — платформа обмена навыками
 
-### Стек
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=ts,react,redux,html,css,vite" alt="Skills" />
+<div align="center">
+SPA-сервис, где пользователи находят друг друга для обмена знаниями
+
+<p>
+  <img src="https://skillicons.dev/icons?i=ts,react,redux,vite,html,css" alt="Tech stack" />
 </p>
 
-SkillSwap — одностраничное (SPA) приложение, в котором пользователи публикуют навыки двух типов: 
-- “Учу” — навыки, которыми пользователь готов делиться;
-- “Учусь” — навыки, которым пользователь хочет научиться.
-Сервис позволяет находить взаимно подходящие пары, отправлять заявки на обмен и вести список текущих/завершённых сессий. Проект реализован с моковыми данными, без подключения к серверу.
+<p>
+  <img src="https://img.shields.io/badge/team%20project-11%20человек-blueviolet" alt="Team project" />
+  <img src="https://img.shields.io/badge/мой%20вклад-82%20коммита-informational" alt="Commits" />
+  <img src="https://img.shields.io/badge/роль-frontend%20%2B%20зам.%20тимлида-orange" alt="Role" />
+  <!-- <img src="https://img.shields.io/github/actions/workflow/status/yaylnt/SkillSwap_52_2/ci.yml?branch=main&label=CI" alt="CI status" /> -->
+</p>
+
+[Демо](#demo) · [Figma](https://www.figma.com/design/bKwOakHJI7Z2mh2zVCBphP/SkillSwap---%D0%94%D0%BB%D1%8F-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%BE%D0%B2?node-id=69-279&t=V9TRxM1DIym8VaxH-1) · [Как запустить](#-быстрый-старт) · [Мой вклад](#my-contribution)
+
+</div>
 
 ---
 
-## Быстрый старт
+## 📌 О проекте
+
+SkillSwap — командный учебный проект (Яндекс Практикум), реализованный за 4 недели по полному циклу: от технического задания и распределения ролей до деплоя.
+
+Пользователи публикуют навыки двух типов — «Учу» и «Учусь», ищут взаимно подходящие пары через каталог с фильтрами, отправляют заявки на обмен и ведут список сессий. Данные — моковые (JSON + localStorage), без бэкенда с соответствии с ТЗ.
+
+- команда из 11 человек, реальный Git-флоу с Pull Request'ами, код-ревью и CI;
+- проект прошёл техническое ревью наставника:в разделе [«Ревью и рост»](#-ревью-и-рост) честно перечислено, что было найдено и план доработок.
+
+---
+
+<a id="demo"></a>
+## 🖥️ Демо
+#### Работа фильтра и поисковой строки
+
+https://github.com/user-attachments/assets/b8d4bddc-91ed-46d0-9337-6584c436cab3
+
+#### Процесс регистрации и создания карточки навыка
+
+https://github.com/user-attachments/assets/6b4cc1cd-ac2b-4b6b-b486-46061f6e3c4b
+
+<!-- Продакшен-сборка деплоится автоматически на GitHub Pages при пуше в `main` (см. `.github/workflows/cd.yml`). -->
+
+---
+
+## 🚀 Быстрый старт
 
 ```bash
 npm install
 npm run dev
 ```
 
+Требуется Node.js 20+.
+
+### Доступные скрипты
+
+| Скрипт | Что делает |
+|---|---|
+| `npm run dev` | Запуск дев-сервера |
+| `npm run build` | Типизация (`tsc -b`) + продакшен-сборка |
+| `npm run preview` | Просмотр продакшен-сборки локально |
+| `npm run lint` / `npm run lint:fix` | ESLint + Stylelint |
+| `npm run format` | Форматирование Prettier |
+| `npm run test` / `npm run test:watch` | Тесты (Vitest + Testing Library) |
+| `npm run test:coverage` | Покрытие, цель ≥ 70% statements |
+
 ---
 
-## Мой вклад в проект:
-- Координировала работу команды из 11 человек в роли помощника тимлида:
-декомпозировала задачи, распределяла работу, проводила code review.
-- Реализовала авторизацию с помощью React Hook Form и Yup, управление состоянием
-пользователя — через Redux.
-- Разрабатывала React-компоненты по макетам: вёрстка, взаимодействие компонентов и логика
-отображения состояний.
-- Реализовала поисковую строку с сохранением query-параметров в URL.
-- Реализовала календарь с использованием datepicker.
+<a id="my-contribution"></a>
+## 🙋‍♀️ Мой вклад в проект
 
-## Структура проекта
+Роль: **frontend-разработчик и помощник тимлида**.
+
+**Управление командой**
+- Как помощник тимлида декомпозировала задачи технического задания на issue-уровень, проводила code review PR, мотивировала команду и проводила простой онбординг новых участников.
+
+**Redux / состояние приложения**
+- Спроектировала `authSlice` и `accountSlice` — авторизация и данные аккаунта хранятся раздельно от Redux-стейта в localStorage; пароль никогда не попадает в стейт (`Omit<UserAccount, 'password'>`).
+- Реализовала логин через React Hook Form + Yup (`Controller`, `yupResolver`, режим `onChange`, разделение ошибок валидации и серверных ошибок).
+
+**Каталог и поиск**
+- Спроектировала конфиг фильтров каталога: дискриминированный union-тип `FilterGroupConfig[]`, компонент `FilterSection`, чекбоксы с indeterminate-состоянием для вложенных категорий (`CheckboxGroup`) и `RadioGroup`.
+- Реализовала поисковую строку в хедере с сохранением query-параметра в URL, дропдауном подсказок (`useSearchSuggestions`) и CSS-скроллом без сторонних библиотек.
+
+**Компонентная библиотека**
+- Разработала переиспользуемые UI-компоненты: `Checkbox`, `CheckboxGroup`, `RadioButton`, `RadioGroup`, `FilterSection`, `StepProgress`, `Calendar` (на базе `react-datepicker`), `Header`.
+- Единый подход по всей библиотеке: CSS Modules + `clsx`, контролируемые компоненты, инлайн-SVG без иконочных библиотек.
+
+**Данные**
+- Дорабатывала моковые данные навыков (`skills.json`) с учётом ограничений формы (длина заголовков, формат подкатегорий, изображения через `picsum.photos`).
+
+---
+
+## 🗂️ Архитектура проекта
+
+Проект построен по мотивам Feature-Sliced Design:
 
 ```
 src/
@@ -55,64 +119,24 @@ src/
 
 public/
 └── db/
-    ├── skills.json       # Добавь сюда моки навыков
-    └── users.json        # Добавь сюда моки пользователей
+    ├── skills.json       # Моки навыков
+    └── users.json        # Моки пользователей
 ```
 
----
-
-## Моки данных
-
-Файлы `public/db/skills.json` и `public/db/users.json` содержат моковые данные навыков и пользователей.
-
-Структура объектов описана в `src/shared/types/index.ts`.
+**Стек:** React 18 + TypeScript, Redux Toolkit, React Router v6, React Hook Form + Yup, Vite, CSS Modules, Vitest + React Testing Library, ESLint (Airbnb) + Prettier + Stylelint, GitHub Actions (CI + деплой на GitHub Pages).
 
 ---
 
-## Доступные скрипты
+## 🔍 Ревью и рост
 
-| Скрипт | Что делает |
-|--------|------------|
-| `npm run dev` | Запуск dev-сервера |
-| `npm run build` | Сборка для продакшена |
-| `npm run preview` | Запуск просмотра production-сборки |
-| `npm run lint` | Проверка ESLint + Stylelint |
-| `npm run lint:fix` | Автоисправление lint-ошибок |
-| `npm run format` | Форматирование через Prettier |
-| `npm run test` | Запуск тестов |
-| `npm run test:watch` | Тесты в watch-режиме |
-| `npm run test:coverage` | Покрытие (цель ≥ 70%) |
+Проект прошёл техническое ревью наставника. Ниже представлен план доработок, которые буду внедрять постепенно.
 
----
+| Спринт | Фокус | Задачи |
+|---|---|---|
+| 1 | Зелёный CI | Починить гонку записи в `createSwapRequest`; включить coverage в CI; выправить форматирование; заменить `Math.random()` на `useId()` |
+| 2 | Единый источник правды | Убрать прямые вызовы `getAuthUser()` из рендера компонентов в пользу Redux-селекторов; свести загрузку `users`/`skills` к одной точке входа; вынести ключи `localStorage` и имена событий в константы |
+| 3 | Границы слоёв | Перенести составные компоненты из `shared` в `widgets`; расформировать внефсдэшный `src/components/`; включить `eslint-plugin-boundaries`, чтобы `shared` не мог тянуть `features`/`entities` |
 
-## Роутинг
-
-Маршруты объявлены в `src/shared/lib/constants.ts` → `ROUTES`.
-
-Lazy-загрузка настроена в `src/app/providers/RouterProvider.tsx`.
-
----
-
-## План доработок
-
-Командой реализован MVP проекта. Ниже план дальнейших доработок.
-
-**Спринт 1**, зелёный CI.
-- Починить тест и двойную запись в createSwapRequest
-- Добавить @vitest/coverage-v8, включить покрытие в CI
-- Прогнать npm run format, поправить отступы, переименовать usercard-elemetn.tsx
-- Заменить Math.random() на useId() в Input
-- Починить --modal-overlay-color, xmlns и три несуществующие переменные
-
-**Спринт 2**, один источник правды.
-- getAuthUser() из рендера UserCard и SkillCard, перевести на селекторы
-- Свести загрузку users и skills к одной точке, убрать fetchUserById из SkillCard и динамический импорт из FavoritesPage
-- Ключ likedSkills и имена событий забрать в constants и в экспорты requestStorage
-- Починить связку профиля и авторизации
-
-**Спринт 3**, границы слоёв.
-- Перенести составные компоненты из shared в widgets, расформировать src/components/
-- *Utils перенести в shared/lib/storage/
-- Включить eslint-plugin-boundaries
-- Вынести преобразование wantsToLearn в одну общую функцию
-
+**Что я вынесла из этого ревью:**
+- моковые данные могут маскировать баги (в датасете было по одному навыку на пользователя — из-за этого ошибка фильтрации в каталоге оставалась незамеченной);
+- решение, принятое одним человеком в `shared`-компоненте, не становится стандартом команды само по себе — нужны линтер границ и зафиксированные договорённости, а не только код-ревью.

@@ -1,142 +1,137 @@
-# 🎓 SkillSwap — платформа обмена навыками
+**English** | [Русский](/README.ru.md)
 
-<div align="center">
-SPA-сервис, где пользователи находят друг друга для обмена знаниями
+# 🎓 SkillSwap — a Skill Exchange Platform
 
-<p>
-  <img src="https://skillicons.dev/icons?i=ts,react,redux,vite,html,css" alt="Tech stack" />
-</p>
+An SPA where users find each other to exchange knowledge
 
-<p>
-  <img src="https://img.shields.io/badge/team%20project-11%20человек-blueviolet" alt="Team project" />
-  <img src="https://img.shields.io/badge/мой%20вклад-82%20коммита-informational" alt="Commits" />
-  <img src="https://img.shields.io/badge/роль-frontend%20%2B%20зам.%20тимлида-orange" alt="Role" />
-  <!-- <img src="https://img.shields.io/github/actions/workflow/status/yaylnt/SkillSwap_52_2/ci.yml?branch=main&label=CI" alt="CI status" /> -->
-</p>
+[![Tech stack](https://skillicons.dev/icons?i=ts,react,redux,vite,html,css)](https://skillicons.dev/icons?i=ts,react,redux,vite,html,css)
 
-[Демо](#demo) · [Figma](https://www.figma.com/design/bKwOakHJI7Z2mh2zVCBphP/SkillSwap---%D0%94%D0%BB%D1%8F-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%BE%D0%B2?node-id=69-279&t=V9TRxM1DIym8VaxH-1) · [Как запустить](#-быстрый-старт) · [Мой вклад](#my-contribution)
+[![Team project](https://img.shields.io/badge/team%20project-11%20people-blueviolet)](https://img.shields.io/badge/team%20project-11%20people-blueviolet) [![Commits](https://img.shields.io/badge/my%20contribution-82%20commits-informational)](https://img.shields.io/badge/my%20contribution-82%20commits-informational) [![Role](https://img.shields.io/badge/role-frontend%20%2B%20team%20lead%20assistant-orange)](https://img.shields.io/badge/role-frontend%20%2B%20team%20lead%20assistant-orange)
 
-</div>
+[Demo](#demo) · [Figma](https://www.figma.com/design/bKwOakHJI7Z2mh2zVCBphP/SkillSwap---%D0%94%D0%BB%D1%8F-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%BE%D0%B2?node-id=69-279&t=V9TRxM1DIym8VaxH-1) · [Quick Start](#-quick-start) · [My Contribution](#my-contribution)
 
 ---
 
-## 📌 О проекте
+## 📌 About the Project
 
-SkillSwap — командный учебный проект (Яндекс Практикум), реализованный за 4 недели по полному циклу: от технического задания и распределения ролей до деплоя.
+SkillSwap is a team learning project (Yandex Practicum) built in 4 weeks, covering the full cycle: from the technical specification and role assignment to deployment.
 
-Пользователи публикуют навыки двух типов — «Учу» и «Учусь», ищут взаимно подходящие пары через каталог с фильтрами, отправляют заявки на обмен и ведут список сессий. Данные — моковые (JSON + localStorage), без бэкенда с соответствии с ТЗ.
+Users publish skills of two types — "Teaching" and "Learning" — look for mutually matching pairs through a catalog with filters, send exchange requests and keep a list of sessions. The data is mocked (JSON + localStorage), with no backend, in accordance with the technical specification.
 
-- команда из 11 человек, реальный Git-флоу с Pull Request'ами, код-ревью и CI;
-- проект прошёл техническое ревью наставника:в разделе [«Ревью и рост»](#-ревью-и-рост) честно перечислено, что было найдено и план доработок.
+- a team of 11 people, a real Git flow with pull requests, code review and CI;
+- the project went through a technical review by a mentor: the ["Review and Growth"](#-review-and-growth) section honestly lists what was found and the plan for improvements.
 
 ---
 
-<a id="demo"></a>
-## 🖥️ Демо
-#### Работа фильтра и поисковой строки
+## 🖥️ Demo
+
+#### Filter and search bar in action
 
 https://github.com/user-attachments/assets/b8d4bddc-91ed-46d0-9337-6584c436cab3
 
-#### Процесс регистрации и создания карточки навыка
+#### Registration and skill card creation flow
 
 https://github.com/user-attachments/assets/6b4cc1cd-ac2b-4b6b-b486-46061f6e3c4b
 
-<!-- Продакшен-сборка деплоится автоматически на GitHub Pages при пуше в `main` (см. `.github/workflows/cd.yml`). -->
-
 ---
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-```bash
+```
 npm install
 npm run dev
 ```
 
-Требуется Node.js 20+.
+Requires Node.js 20+.
 
-### Доступные скрипты
+### Available Scripts
 
-| Скрипт | Что делает |
-|---|---|
-| `npm run dev` | Запуск дев-сервера |
-| `npm run build` | Типизация (`tsc -b`) + продакшен-сборка |
-| `npm run preview` | Просмотр продакшен-сборки локально |
-| `npm run lint` / `npm run lint:fix` | ESLint + Stylelint |
-| `npm run format` | Форматирование Prettier |
-| `npm run test` / `npm run test:watch` | Тесты (Vitest + Testing Library) |
-| `npm run test:coverage` | Покрытие, цель ≥ 70% statements |
-
----
-
-<a id="my-contribution"></a>
-## 🙋‍♀️ Мой вклад в проект
-
-Роль: **frontend-разработчик и помощник тимлида**.
-
-**Управление командой**
-- Как помощник тимлида декомпозировала задачи технического задания на issue-уровень, проводила code review PR, мотивировала команду и проводила простой онбординг новых участников.
-
-**Redux / состояние приложения**
-- Спроектировала `authSlice` и `accountSlice` — авторизация и данные аккаунта хранятся раздельно от Redux-стейта в localStorage; пароль никогда не попадает в стейт (`Omit<UserAccount, 'password'>`).
-- Реализовала логин через React Hook Form + Yup (`Controller`, `yupResolver`, режим `onChange`, разделение ошибок валидации и серверных ошибок).
-
-**Каталог и поиск**
-- Спроектировала конфиг фильтров каталога: дискриминированный union-тип `FilterGroupConfig[]`, компонент `FilterSection`, чекбоксы с indeterminate-состоянием для вложенных категорий (`CheckboxGroup`) и `RadioGroup`.
-- Реализовала поисковую строку в хедере с сохранением query-параметра в URL, дропдауном подсказок (`useSearchSuggestions`) и CSS-скроллом без сторонних библиотек.
-
-**Компонентная библиотека**
-- Разработала переиспользуемые UI-компоненты: `Checkbox`, `CheckboxGroup`, `RadioButton`, `RadioGroup`, `FilterSection`, `StepProgress`, `Calendar` (на базе `react-datepicker`), `Header`.
-- Единый подход по всей библиотеке: CSS Modules + `clsx`, контролируемые компоненты, инлайн-SVG без иконочных библиотек.
-
-**Данные**
-- Дорабатывала моковые данные навыков (`skills.json`) с учётом ограничений формы (длина заголовков, формат подкатегорий, изображения через `picsum.photos`).
+| Script                                | What it does                                |
+| ------------------------------------- | ------------------------------------------- |
+| `npm run dev`                         | Starts the dev server                       |
+| `npm run build`                       | Type-checking (`tsc -b`) + production build |
+| `npm run preview`                     | Previews the production build locally       |
+| `npm run lint` / `npm run lint:fix`   | ESLint + Stylelint                          |
+| `npm run format`                      | Prettier formatting                         |
+| `npm run test` / `npm run test:watch` | Tests (Vitest + Testing Library)            |
+| `npm run test:coverage`               | Coverage, target ≥ 70% statements           |
 
 ---
 
-## 🗂️ Архитектура проекта
+## 🙋‍♀️ My Contribution
 
-Проект построен по мотивам Feature-Sliced Design:
+Role: **frontend developer and team lead assistant**.
+
+**Team management**
+
+- As the team lead's assistant, I broke the tasks of the technical specification down to the issue level, reviewed PRs, motivated the team and ran a simple onboarding for new members.
+
+**Redux / application state**
+
+- Designed `authSlice` and `accountSlice` — authentication and account data are stored separately from the Redux state in localStorage; the password never ends up in the state (`Omit<UserAccount, 'password'>`).
+- Implemented login with React Hook Form + Yup (`Controller`, `yupResolver`, `onChange` mode, separating validation errors from server errors).
+
+**Catalog and search**
+
+- Designed the catalog filter config: a discriminated union type `FilterGroupConfig[]`, the `FilterSection` component, checkboxes with an indeterminate state for nested categories (`CheckboxGroup`) and `RadioGroup`.
+- Implemented the search bar in the header, with the query parameter persisted in the URL, a suggestions dropdown (`useSearchSuggestions`) and CSS-based scrolling without third-party libraries.
+
+**Component library**
+
+- Developed reusable UI components: `Checkbox`, `CheckboxGroup`, `RadioButton`, `RadioGroup`, `FilterSection`, `StepProgress`, `Calendar` (based on `react-datepicker`), `Header`.
+- A consistent approach across the whole library: CSS Modules + `clsx`, controlled components, inline SVG without icon libraries.
+
+**Data**
+
+- Refined the mock skills data (`skills.json`) to fit the form constraints (title length, subcategory format, images via `picsum.photos`).
+
+---
+
+## 🗂️ Project Architecture
+
+The project is built loosely following Feature-Sliced Design:
 
 ```
 src/
-├── api/                  # fetch-функции для загрузки JSON-моков
+├── api/                  # fetch functions for loading JSON mocks
 ├── app/
 │   ├── providers/        # StoreProvider, RouterProvider
-│   └── styles/           # global.css с CSS-переменными
-├── entities/             # Доменные модели: Skill, User, Request
+│   └── styles/           # global.css with CSS variables
+├── entities/             # Domain models: Skill, User, Request
 │   ├── skill/
 │   ├── user/
 │   └── request/
-├── features/             # Фичи: auth, skills, favorites, requests
-├── pages/                # Страницы приложения
+├── features/             # Features: auth, skills, favorites, requests
+├── pages/                # Application pages
 ├── shared/
 │   ├── hooks/            # useDebounce, useLocalStorage
 │   ├── lib/              # constants, helpers
-│   ├── types/            # общие TypeScript-типы
-│   └── ui/               # атомарные компоненты
-├── store/                # Redux store и типизированные хуки
-└── widgets/              # Составные блоки: Header, SkillCard, FiltersBar
+│   ├── types/            # shared TypeScript types
+│   └── ui/               # atomic components
+├── store/                # Redux store and typed hooks
+└── widgets/              # Composite blocks: Header, SkillCard, FiltersBar
 
 public/
 └── db/
-    ├── skills.json       # Моки навыков
-    └── users.json        # Моки пользователей
+    ├── skills.json       # Skill mocks
+    └── users.json        # User mocks
 ```
 
-**Стек:** React 18 + TypeScript, Redux Toolkit, React Router v6, React Hook Form + Yup, Vite, CSS Modules, Vitest + React Testing Library, ESLint (Airbnb) + Prettier + Stylelint, GitHub Actions (CI + деплой на GitHub Pages).
+**Stack:** React 18 + TypeScript, Redux Toolkit, React Router v6, React Hook Form + Yup, Vite, CSS Modules, Vitest + React Testing Library, ESLint (Airbnb) + Prettier + Stylelint, GitHub Actions (CI + deployment to GitHub Pages).
 
 ---
 
-## 🔍 Ревью и рост
+## 🔍 Review and Growth
 
-Проект прошёл техническое ревью наставника. Ниже представлен план доработок, которые буду внедрять постепенно.
+The project went through a technical review by a mentor. Below is the plan for improvements that I will implement gradually.
 
-| Спринт | Фокус | Задачи |
-|---|---|---|
-| 1 | Зелёный CI | Починить гонку записи в `createSwapRequest`; включить coverage в CI; выправить форматирование; заменить `Math.random()` на `useId()` |
-| 2 | Единый источник правды | Убрать прямые вызовы `getAuthUser()` из рендера компонентов в пользу Redux-селекторов; свести загрузку `users`/`skills` к одной точке входа; вынести ключи `localStorage` и имена событий в константы |
-| 3 | Границы слоёв | Перенести составные компоненты из `shared` в `widgets`; расформировать внефсдэшный `src/components/`; включить `eslint-plugin-boundaries`, чтобы `shared` не мог тянуть `features`/`entities` |
+| Sprint | Focus                  | Tasks                                                                                                                                                                                                                               |
+| ------ | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1      | Green CI               | Fix the write race in `createSwapRequest`; enable coverage in CI; fix formatting; replace `Math.random()` with `useId()`                                                                                                            |
+| 2      | Single source of truth | Remove direct `getAuthUser()` calls from component render in favor of Redux selectors; reduce `users`/`skills` loading to a single entry point; extract `localStorage` keys and event names into constants                         |
+| 3      | Layer boundaries       | Move composite components from `shared` to `widgets`; dissolve the non-FSD `src/components/`; enable `eslint-plugin-boundaries` so that `shared` cannot import from `features`/`entities`                                           |
 
-**Что я вынесла из этого ревью:**
-- моковые данные могут маскировать баги (в датасете было по одному навыку на пользователя — из-за этого ошибка фильтрации в каталоге оставалась незамеченной);
-- решение, принятое одним человеком в `shared`-компоненте, не становится стандартом команды само по себе — нужны линтер границ и зафиксированные договорённости, а не только код-ревью.
+**What I took away from this review:**
+
+- mock data can mask bugs (the dataset had only one skill per user, which is why a catalog filtering bug went unnoticed);
+- a decision made by one person in a `shared` component doesn't become a team standard on its own — it takes a boundaries linter and documented agreements, not just code review.
